@@ -1,0 +1,97 @@
+body{
+    font-size: 40px;
+    font-family: sans-serif;
+    width: 100%;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: red;
+    background: linear-gradient(to right, #240b36, #c31432 );
+    background: linear-gradient(to right, #240b36, #c31432);
+    color: #fff;
+}
+
+.container{
+    display: table;
+    width: 100%;
+    height: 100vh;
+}
+
+nav{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    display: inline-block;
+    padding: 0 15px;
+}
+
+a{
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+    padding: 10px 0;
+}
+
+a:hover{
+    text-decoration: none;
+    color: rgb(236, 240, 12);
+    /* border: 2px solid #222;
+    padding: 9px;
+    background: rgb(145, 169, 240);
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px; */
+}
+
+a:before, a:after{
+    content:' ';
+    position: absolute;
+    background: yellow;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+}
+a:before{
+    left: 0;
+}
+a:after{
+    right: 0;
+    background: yellow;
+    transition: width 0.8s cubic-bezier(0.22, 0.62, 0.36, 1);
+    -webkit-transition: width 0.8s cubic-bezier(0.22, 0.62, 0.36, 1);
+    -moz-transition: width 0.8s cubic-bezier(0.22, 0.62, 0.36, 1);
+    -ms-transition: width 0.8s cubic-bezier(0.22, 0.62, 0.36, 1);
+    -o-transition: width 0.8s cubic-bezier(0.22, 0.62, 0.36, 1);
+}
+a:hover:before{
+    background: yellow;
+    width: 100%;
+    transition: widht 0.5s cubic-bezier(0.22, 0.62, 0.36, 1);
+    -webkit-transition: widht 0.5s cubic-bezier(0.22, 0.62, 0.36, 1);
+    -moz-transition: widht 0.5s cubic-bezier(0.22, 0.62, 0.36, 1);
+    -ms-transition: widht 0.5s cubic-bezier(0.22, 0.62, 0.36, 1);
+    -o-transition: widht 0.5s cubic-bezier(0.22, 0.62, 0.36, 1);
+}
+
+a:hover:after{
+    background: transparent;
+    width: 100%;
+    transition: 0s;
+    -webkit-transition: 0s;
+    -moz-transition: 0s;
+    -ms-transition: 0s;
+    -o-transition: 0s;
+}
