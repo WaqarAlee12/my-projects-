@@ -1,107 +1,196 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 :root{
-    --primary-color:#ff005c;
-    --white-color:#fff;
-    --light-sky-color:#e4fbff;
-    --cyan-color:#94ebcd;
+    --primary:#ddd;
+    --light:#fff;
+    --dark:#333;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
 html{
-    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark);
 }
 
-nav{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 4.88rem;
-    background: var(--primary-color);
-    box-shadow: 0 0.623rem 0.313rem rgba(0, 0, 0, 0.1);
-}
-nav .navbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    max-width: 90%;
-    background: var(--primary-color);
-    margin: auto; 
+body{
+    background: #ccc;
+    margin: 30px 50px;
+    line-height: 1.4;
 }
 
-nav .navbar .logo a{
-    color: var(--white-color);
-    font-size: 1.423rem;
-    font-weight: 600;
+.btn{
+    background: var(--dark);
+    color: var(--light);
+    padding: 0.6rem 1.3rem;
     text-decoration: none;
+    border: 0;
 }
+ img{
+    max-width: 100%;
+ }
+ 
+ .wrapper{
+    display: grid;
+    grid-gap:20px;
+ }
 
-.navbar .menu{
-    display: flex;
-}
-.navbar .menu li{
-    list-style-type: none;
-    margin: 0.643rem;
-}
+ .main-nav ul{
+    display: grid;
+    grid-gap:20px;
+    padding: 0;
+    grid-template-columns: repeat(4,1fr);
+    list-style: none;
+ }
 
-.navbar .menu li a{
+ .main-nav a{
+    background: var(--primary);
+    display: block;
     text-decoration: none;
-    color: var(--white-color);
-    font-size: 1.432rem;
-    font-weight: 500;
-}
+    padding: 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow);
+ }
 
-section{
+ .main-nav a:hover{
+    background: var(--dark);
+    color: var(--light);
+ }
+
+ .top-container{
+    display: grid;
+    grid-gap:20px;
+    grid-template-areas: 
+        'showcase showcase top-box-a'
+        'showcase showcase top-box-b';
+ }
+
+ .showcase{
+    grid-area: showcase;
+    min-height: 400px;
+    background: url(images/showcase.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
     display: flex;
-    width: 100%;
-    height: 100vh;
-    align-items: center;
+    flex-direction: column;
+    align-items: start;
     justify-content: center;
-    color: var(--primary-color);
-    font-size: 4.324rem;
-}
+    box-shadow: var(--shadow);
+ }
 
-#Home{
-    background: var(--white-color);
-}
+ .showcase h1{
+    font-size: 4rem;
+    margin-bottom: 0;
+    color: var(--light);
+ }
+ 
+ .showcase p{
+    font-size: 1.4rem;
+    margin-top: 0;
+    color: var(--light);
+ }
 
-#About{
-    background:  var(--cyan-color);
-}
+ .top-box{
+    background: var(--primary);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+ }
 
-#Gallery{
-    background: var(--light-sky-color);
-}
+ .top-box .price{
+    font-size: 2.5rem;
+ }
 
-#Contact{
-    background: var(--cyan-color);
-}
+ .top-box-top-a{
+    grid-area: top-box-a;
+ }
 
-#Blog{
-    background: var(--primary-color);
-    color: var(--white-color);
-}
+ .top-box-top-b{
+    grid-area: top-box-b;
+ }
 
+ .boxes{
+    display: grid;
+    grid-gap:20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ }
 
+ .box{
+    background: var(--primary);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow);
+ }
 
+ .info{
+    background: var(--primary);
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-gap:40px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: ;
+    padding: 3rem;
+ }
 
+ .info img{
+    background-size: cover;
+    background-position: center;
+ }
 
+ .portfolio{
+    display: grid;
+    grid-gap:30px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ }
 
+ .portfolio img{
+    width: 100%;
+    box-shadow: var(--shadow);
+ }
 
+ footer{
+    margin-top: 2rem;
+    background: var(--dark);
+    color: var(--light);
+    text-align: center;
+    padding: 1rem;
+ }
 
+ @media (max-width:700px) {
+    .top-container{
+        grid-template-areas: 
+        'showcase showcase'
+        'top-box-a top-box-b';
+    }
 
+    .main-nav ul{
+        grid-template-columns: 1fr;
+    }
 
+    .info{
+        grid-template-columns: 1fr;
+    }
+    .showcase h1{
+        font-size: 2-5rem;
+    }
+    
+    .info .btn{
+        display: block;
+        text-align: center;
+        margin: auto;
+    }
+ }
 
-
-
-
-
-
-
-
-
+ @media (max-width:500px) {
+    .top-container{
+        grid-template-areas: 
+        'showcase'
+        'showcase'
+        'top-box-a'
+        'top-box-b';
+    }
+    
+ }
